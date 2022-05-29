@@ -1,14 +1,25 @@
 <script lang="ts">
   import router from "page";
-  import Home from "./components/Home.svelte";
-  import About from "./components/About.svelte";
-  import Prototype from "./components/Prototype.svelte";
+  import Home from "./pages/Home.svelte";
+  import About from "./pages/About.svelte";
+  import FirstThreeJs from "./pages/FirstThreeJs.svelte";
+  import MeshRendering from "./pages/MeshRendering.svelte";
+  import BasicWebGlTriangle from "./pages/BasicWebGlTriangle.svelte";
+  import BasicWebGlRectangle from "./pages/BasicWebGlRectangle.svelte";
+  import BasicWebGlManyRectangles from "./pages/BasicWebGlManyRectangles.svelte";
 
+  // page router settings
   let page;
   router("/", () => (page = Home));
   router("/about", () => (page = About));
-  router("/prototype", () => (page = Prototype));
-
+  router("/first-threejs", () => (page = FirstThreeJs));
+  router("/mesh-rendering", () => (page = MeshRendering));
+  router("/basic-webgl-triangle", () => (page = BasicWebGlTriangle));
+  router("/basic-webgl-rectangle", () => (page = BasicWebGlRectangle));
+  router(
+    "/basic-webgl-many-rectangles",
+    () => (page = BasicWebGlManyRectangles)
+  );
   router.start();
 
   export let name: string;
